@@ -7,5 +7,6 @@ namespace Dominio
         public string LastName { get; set; }
         public string Grade { get; set; }
         public byte[] ProfilePhoto { get; set; }
+        public ICollection<CourseInstructor> CourseLink { get; set; }
     }
 }

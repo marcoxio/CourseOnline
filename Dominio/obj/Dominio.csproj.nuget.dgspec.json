@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj": {}
+    "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj": {
+    "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj",
+        "projectPath": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj",
         "packagesPath": "C:\\Users\\manji\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\obj\\",
+        "outputPath": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\manji\\AppData\\Roaming\\NuGet\\NuGet.Config",

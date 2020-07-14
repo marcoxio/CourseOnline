@@ -11,3 +11,12 @@
 
 # Install MediatR
 `dotnet add package MediatR.Extensions.Microsoft.DependencyInjection --version 3.1.3`
+
+
+# How to Consult methods API
+
+## GetAllCourses
+`http://localhost:5000/api/cursos`
+
+## DetailCourse
+`http://localhost:5000/api/cursos{id}`

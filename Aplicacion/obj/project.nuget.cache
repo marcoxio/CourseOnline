@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+ojP/Ibz0wFGA7f36Rq50nUR0mOvnoTOTk6hauUX9OzbejnBT5iI2bwGDINSDN5iFXWvRwwT/ZEUJqftXjqrng==",
+  "dgSpecHash": "z2g3TuZrCdJe4lbCO2hORqrC/PtfX+MrVY5v3JWk5bEbgvSL+9Ve1kQRPC365k4JUjZ9qjvYV5GIXpqt6YcRSA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Aplicacion\\Aplicacion.csproj",
+  "projectFilePath": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Aplicacion\\Aplicacion.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\manji\\.nuget\\packages\\mediatr\\8.0.0\\mediatr.8.0.0.nupkg.sha512",
     "C:\\Users\\manji\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\8.0.0\\mediatr.extensions.microsoft.dependencyinjection.8.0.0.nupkg.sha512",

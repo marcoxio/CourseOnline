@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XFeb3NgaE+SFcRh6w8bBn1eLZW3nzAuqYI8hc54BL3IupN/hEWYsVj0ZNgT2fs/k1JsQiOhMIrMS4GLpyNpCCg==",
+  "dgSpecHash": "CYuoX9tJneXIbFOP1D3/LFG2RO+H4RkaIyhXaS/QqkVg2w1Sl5V0Zpyh0licU9fBv2Abb8KAl1erF/LQMBUqZA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\manji\\.nuget\\packages\\mediatr\\8.0.0\\mediatr.8.0.0.nupkg.sha512",
     "C:\\Users\\manji\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\8.0.0\\mediatr.extensions.microsoft.dependencyinjection.8.0.0.nupkg.sha512",

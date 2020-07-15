@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Persistencia\\Persistencia.csproj": {}
+    "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Persistencia\\Persistencia.csproj": {}
   },
   "projects": {
-    "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj": {
+    "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj",
+        "projectPath": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj",
         "packagesPath": "C:\\Users\\manji\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\obj\\",
+        "outputPath": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\manji\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,14 +59,14 @@
         }
       }
     },
-    "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Persistencia\\Persistencia.csproj": {
+    "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Persistencia\\Persistencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Persistencia\\Persistencia.csproj",
+        "projectUniqueName": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Persistencia\\Persistencia.csproj",
         "projectName": "Persistencia",
-        "projectPath": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Persistencia\\Persistencia.csproj",
+        "projectPath": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Persistencia\\Persistencia.csproj",
         "packagesPath": "C:\\Users\\manji\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Persistencia\\obj\\",
+        "outputPath": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Persistencia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\manji\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +82,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj": {
-                "projectPath": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj"
+              "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Dominio\\Dominio.csproj"
               }
             }
           }

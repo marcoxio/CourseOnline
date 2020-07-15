@@ -5102,11 +5102,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\WebAPI\\WebAPI.csproj",
+      "projectPath": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\manji\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\manji\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5122,8 +5122,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Aplicacion\\Aplicacion.csproj": {
-              "projectPath": "c:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Aplicacion\\Aplicacion.csproj"
+            "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Aplicacion\\Aplicacion.csproj": {
+              "projectPath": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\Aplicacion\\Aplicacion.csproj"
             }
           }
         }

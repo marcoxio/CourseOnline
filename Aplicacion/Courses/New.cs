@@ -1,7 +1,11 @@
 using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using Aplicacion.Exceptions;
 using Dominio;
+using Dominio.Entities;
+using FluentValidation;
 using MediatR;
 using Persistencia;
 
@@ -13,7 +17,17 @@ namespace Aplicacion.Courses
             // public int CourseId { get; set; }
             public string Title { get; set; }
             public string Description { get; set; }
-            public DateTime DateOfPublication { get; set; }
+            public DateTime? DateOfPublication { get; set; }
+        }
+
+        public class ExecuteValidation : AbstractValidator<Execute>
+        {
+            public ExecuteValidation()
+            {
+                RuleFor(x => x.Title).NotEmpty();
+                RuleFor(x => x.Description).NotEmpty();
+                RuleFor(x => x.DateOfPublication).NotEmpty();
+            }
         }
 
 
@@ -39,6 +53,7 @@ namespace Aplicacion.Courses
                 if(value > 0)
                 {
                     return Unit.Value;
+                    throw new HandlerException(HttpStatusCode.Created,new {message = "Course Created"});
                 }
 
                 throw new Exception("Someting wrong, dont insert course");

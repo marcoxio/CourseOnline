@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Aplicacion.Courses;
 using Dominio;
+using Dominio.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

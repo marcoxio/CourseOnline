@@ -1,6 +1,8 @@
 using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using Aplicacion.Exceptions;
 using MediatR;
 using Persistencia;
 
@@ -24,7 +26,8 @@ namespace Aplicacion.Courses
             {
                 var course = await _context.Course.FindAsync(request.Id);
                 if(course==null){
-                    throw new Exception("Dont delete this course");
+                    // throw new Exception("Dont delete this course");
+                    throw new HandlerException(HttpStatusCode.NotFound,new {message = "Don't found course"});
                 }
 
                 _context.Remove(course);

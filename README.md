@@ -13,6 +13,9 @@
 `dotnet add package MediatR.Extensions.Microsoft.DependencyInjection --version 3.1.3`
 
 
+# Install fluentValidation
+`dotnet add package FluentValidation.AspNetCore --version 8.5.2`
+
 # How to Consult methods API
 
 ## GetAllCourses

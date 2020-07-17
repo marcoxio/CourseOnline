@@ -12,7 +12,6 @@ C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Micros
 C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
@@ -58,3 +57,9 @@ C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\obj\Debug\netcoreapp3.1\WebAPI
 C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.genruntimeconfig.cache
 C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\MediatR.dll
 C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

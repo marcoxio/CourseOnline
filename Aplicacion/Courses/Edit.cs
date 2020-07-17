@@ -1,6 +1,9 @@
 using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using Aplicacion.Exceptions;
+using FluentValidation;
 using MediatR;
 using Persistencia;
 
@@ -13,6 +16,16 @@ namespace Aplicacion.Courses
             public string Title { get; set; }
             public string Description { get; set; }
             public DateTime? DateOfPublication { get; set; }
+        }
+
+        public class ExecuteValidation : AbstractValidator<Execute>
+        {
+            public ExecuteValidation()
+            {
+                RuleFor(x => x.Title).NotEmpty();
+                RuleFor(x => x.Description).NotEmpty();
+                RuleFor(x => x.DateOfPublication).NotEmpty();
+            }
         }
 
         public class Handler : IRequestHandler<Execute>
@@ -28,7 +41,8 @@ namespace Aplicacion.Courses
                 var course = await _context.Course.FindAsync(request.CourseId);
                 if(course == null)
                 {
-                    throw new Exception("That course dont exists");
+                    // throw new Exception("That course dont exists");
+                     throw new HandlerException(HttpStatusCode.NotFound,new {message = "Don't found course"});
                 }
 
                 course.Title = request.Title ?? course.Title;
@@ -39,6 +53,7 @@ namespace Aplicacion.Courses
                 if(result > 0)
                 {
                     return Unit.Value;
+                    throw new HandlerException(HttpStatusCode.NoContent,new {message = "Course Updated"});
                 }
                 throw new Exception("Dont save changes at course");
 

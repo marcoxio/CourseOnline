@@ -1,4 +1,4 @@
-using Dominio;
+using Dominio.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistencia

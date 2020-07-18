@@ -16,6 +16,18 @@
 # Install fluentValidation
 `dotnet add package FluentValidation.AspNetCore --version 8.5.2`
 
+
+
+# Generate Migration
+`dotnet ef migrations add IdentityCoreInicial -p .\Persistencia\ -s .\WebAPI\`
+
+# Run migration
+`dotnet ef database update -p .\Persistencia\ -s .\WebAPI\`
+
+# Execute File Migration
+file Program change
+`dotnet watch run`
+
 # How to Consult methods API
 
 ## GetAllCourses

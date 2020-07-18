@@ -1,12 +1,14 @@
+using System;
+
 namespace Dominio.Entities
 {
     public class Comment
     {
-        public int CommentId { get; set; }
+        public Guid CommentId { get; set; }
         public string Alumn { get; set; }
         public int Score { get; set; }
         public string TextComment { get; set; }
-        public int CourseId { get; set; }
+        public Guid CourseId { get; set; }
         public Course Course { get; set; }
     }
 }

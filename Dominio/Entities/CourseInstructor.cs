@@ -1,10 +1,12 @@
+using System;
+
 namespace Dominio.Entities
 {
     public class CourseInstructor
     {
-        public int CourseId { get; set; }
+        public Guid CourseId { get; set; }
         public Course Course { get; set; }
-        public int InstructorId { get; set; }
+        public Guid InstructorId { get; set; }
         public Instructor Instructor { get; set; }
     }
 }

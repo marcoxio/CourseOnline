@@ -63,3 +63,8 @@ C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Fluent
 C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll

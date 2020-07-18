@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Aplicacion.Courses;
+using Dominio.Entities;
 using FluentValidation.AspNetCore;
 using MediatR;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Persistencia;
@@ -46,9 +50,17 @@ namespace WebAPI
             #endregion
 
             #region AddFluentValidation
-                services.AddControllers().AddFluentValidation(cfg => 
+                services.AddControllers()
+                .AddFluentValidation(cfg => 
                 {
                     cfg.RegisterValidatorsFromAssemblyContaining<New>();
+
+                    //Configure Core Identity
+                    var builder = services.AddIdentityCore<User>();
+                    var identityBuilder = new IdentityBuilder( builder.UserType,builder.Services);
+                    identityBuilder.AddEntityFrameworkStores<CoursesOnlineContext>();
+                    identityBuilder.AddSignInManager<SignInManager<User>>();
+                    services.TryAddSingleton<ISystemClock, SystemClock>();
                 });
             #endregion
 

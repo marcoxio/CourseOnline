@@ -1,0 +1,22 @@
+[{
+        "CourseId": "0AE836B3-17D9-4A7B-9E07-DCCCD4FEBAFB",
+        "Title": "React - La Gu�a Completa: Hooks Context Redux MERN +15 Apps",
+        "Description": "Incluye React Hooks, Gatsby y GraphQL, Firestore, Redux, Context, MERN, Next.js, Styled Components, Custom Hooks Y M�S!!",
+        "DateOfPublication": "2020-06-06",
+        "CoverPhoto": null
+    },
+    {
+        "CourseId": "1595AEC7-D33F-4DE6-A216-CF9A7F3E24FD",
+        "Title": "React JS + Redux + ES6. Completo �De 0 a experto! (espa�ol)",
+        "Description": "El curso de React en espa�ol m�s elegido. Desarrollo en forma pr�ctica, ejemplos, fundamentos y herramientas �tiles",
+        "DateOfPublication": "2020-07-07",
+        "CoverPhoto": null
+    },
+    {
+        "CourseId": "D018185F-3589-4824-A62F-EC6821E7828D",
+        "Title": "React Native - Crea aplicaciones para Android y iOS c/ React",
+        "Description": "Aprende a crear aplicaciones iOS y Android con React, incluye: React Navigation, GraphQL, MongoDB, Firebase y m�s!",
+        "DateOfPublication": "2020-04-04",
+        "CoverPhoto": null
+    }
+]

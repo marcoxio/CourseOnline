@@ -2,6 +2,7 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using Aplicacion.Exceptions;
+using Aplicacion.Interfaces;
 using Dominio.Entities;
 using FluentValidation;
 using MediatR;
@@ -30,36 +31,39 @@ namespace Aplicacion.Security
         {
             private readonly UserManager<User> _userManager;
             private readonly SignInManager<User> _signInManager;
-            public Handler(UserManager<User> userManager, SignInManager<User> signInManager)
+            private readonly IJwtGenerator _jwtGenerator;
+            public Handler(UserManager<User> userManager,
+            SignInManager<User> signInManager, IJwtGenerator jwtGenerator)
             {
+                _jwtGenerator = jwtGenerator;
                 _userManager = userManager;
                 _signInManager = signInManager;
 
             }
 
-            public async Task<UserData> Handle(Execute request, CancellationToken cancellationToken)
+        public async Task<UserData> Handle(Execute request, CancellationToken cancellationToken)
+        {
+            var user = await _userManager.FindByEmailAsync(request.Email);
+            if (user == null)
             {
-                var user = await _userManager.FindByEmailAsync(request.Email);
-                if (user == null)
-                {
-                    throw new HandlerException(HttpStatusCode.Unauthorized);
-                }
-
-                var result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
-                    if(result.Succeeded)
-                    {
-                        return new UserData
-                        {
-                            FullName = user.FullName,
-                            Token = "Esta sera la data del token",
-                            Username = user.UserName,
-                            Email = user.Email,
-                            Image = null
-                        };
-                    }
-
-                    throw new HandlerException(HttpStatusCode.Unauthorized);
+                throw new HandlerException(HttpStatusCode.Unauthorized);
             }
+
+            var result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
+            if (result.Succeeded)
+            {
+                return new UserData
+                {
+                    FullName = user.FullName,
+                    Token = _jwtGenerator.CreateToken(user),
+                    Username = user.UserName,
+                    Email = user.Email,
+                    Image = null
+                };
+            }
+
+            throw new HandlerException(HttpStatusCode.Unauthorized);
         }
     }
+}
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,6 +19,8 @@ namespace Aplicacion.Courses
             public string Title { get; set; }
             public string Description { get; set; }
             public DateTime? DateOfPublication { get; set; }
+
+            public List<Guid> ListInstructor { get; set; }
         }
 
         public class ExecuteValidation : AbstractValidator<Execute>
@@ -41,19 +44,36 @@ namespace Aplicacion.Courses
             }
             public async Task<Unit> Handle(Execute request, CancellationToken cancellationToken)
             {
+                Guid _courseId = Guid.NewGuid();
                 var course = new Course
                 {
+                    CourseId = _courseId,
                     Title = request.Title,
                     Description = request.Description,
                     DateOfPublication = request.DateOfPublication
                 };
 
                 await _context.Course.AddAsync(course);
+
+
+                  if(request.ListInstructor != null){
+                    
+                    foreach (var id in request.ListInstructor)
+                    {
+                        var cursoInstructor = new CourseInstructor{
+                            CourseId = _courseId,
+                            InstructorId = id
+                        };
+                        await _context.CourseInstructor.AddAsync(cursoInstructor);
+                    }
+                }
+
+                
                 var value = await _context.SaveChangesAsync();
                 if(value > 0)
                 {
                     return Unit.Value;
-                    throw new HandlerException(HttpStatusCode.Created,new {message = "Course Created"});
+                    
                 }
 
                 throw new Exception("Someting wrong, dont insert course");

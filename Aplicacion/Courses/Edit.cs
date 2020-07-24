@@ -53,7 +53,6 @@ namespace Aplicacion.Courses
                 if(result > 0)
                 {
                     return Unit.Value;
-                    throw new HandlerException(HttpStatusCode.NoContent,new {message = "Course Updated"});
                 }
                 throw new Exception("Dont save changes at course");
 

@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using Aplicacion.Courses;
 using Aplicacion.Interfaces;
@@ -56,7 +57,8 @@ namespace WebAPI
                 })
                 .AddFluentValidation(cfg => 
                 {
-                    cfg.RegisterValidatorsFromAssemblyContaining<New>();
+                    // cfg.RegisterValidatorsFromAssemblyContaining<New>();
+                    cfg.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
                 });
             #endregion
 

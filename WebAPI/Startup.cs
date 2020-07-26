@@ -2,6 +2,8 @@ using System;
 using System.Text;
 using Aplicacion.Courses;
 using Aplicacion.Interfaces;
+using Aplicacion.Mappings;
+using AutoMapper;
 using Dominio.Entities;
 using FluentValidation.AspNetCore;
 using MediatR;
@@ -45,7 +47,8 @@ namespace WebAPI
       
 
             #region Configuration MediatR
-            services.AddMediatR(typeof(Consult.Handler).Assembly);
+            // services.AddMediatR(typeof(Consult.Handler).Assembly);
+            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
                 
             #endregion
 
@@ -90,6 +93,11 @@ namespace WebAPI
             //Jwt Generator
             services.AddScoped<IJwtGenerator, JwtGenerator>();
             services.AddScoped<IUserSession, UserSession>();
+
+            //Automapper
+            services.AddAutoMapper(typeof(MappingProfile));
+            // services.AddAutoMapper(typeof(Consult.Handler));
+            // services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
            
             

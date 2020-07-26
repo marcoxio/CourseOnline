@@ -21,6 +21,8 @@ namespace Aplicacion.Courses
             public DateTime? DateOfPublication { get; set; }
 
             public List<Guid> ListInstructor { get; set; }
+             public decimal Price { get; set; }
+            public decimal Promotion { get; set; }
         }
 
         public class ExecuteValidation : AbstractValidator<Execute>
@@ -30,6 +32,8 @@ namespace Aplicacion.Courses
                 RuleFor(x => x.Title).NotEmpty();
                 RuleFor(x => x.Description).NotEmpty();
                 RuleFor(x => x.DateOfPublication).NotEmpty();
+                RuleFor(x => x.Price).NotEmpty();
+                RuleFor(x => x.Promotion).NotEmpty();
             }
         }
 
@@ -45,6 +49,8 @@ namespace Aplicacion.Courses
             public async Task<Unit> Handle(Execute request, CancellationToken cancellationToken)
             {
                 Guid _courseId = Guid.NewGuid();
+
+               
                 var course = new Course
                 {
                     CourseId = _courseId,
@@ -67,6 +73,17 @@ namespace Aplicacion.Courses
                         await _context.CourseInstructor.AddAsync(cursoInstructor);
                     }
                 }
+
+                 /*Add logic insert price course*/
+                var priceEntity = new Price{
+                    CourseId = _courseId,
+                    ActualPrice = request.Price,
+                    Promotion = request.Promotion,
+                    PriceId = Guid.NewGuid()
+
+                };
+
+                await _context.Price.AddAsync(priceEntity);
 
                 
                 var value = await _context.SaveChangesAsync();

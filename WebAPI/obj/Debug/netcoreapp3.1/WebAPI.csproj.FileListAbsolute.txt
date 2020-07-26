@@ -77,3 +77,5 @@ C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Securi
 C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\manji\OneDrive\Documentos\Courses\WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

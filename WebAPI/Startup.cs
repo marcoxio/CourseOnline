@@ -21,6 +21,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Persistencia;
 using Persistencia.DapperConnection;
 using Persistencia.DapperConnection.Instructor;
@@ -114,6 +115,15 @@ namespace WebAPI
             // interface instructors
             services.AddScoped<IInstructor,InstructorRepository>();
 
+              //Swagger
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1",new OpenApiInfo{
+                    Title ="Service Courses",
+                    Version = "v1"
+                });
+                c.CustomSchemaIds(c =>c.FullName);
+            });
+
            
             
         }
@@ -137,6 +147,12 @@ namespace WebAPI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            //Habilitar la interfaz grafica de Swagger
+            app.UseSwagger();
+            app.UseSwaggerUI( c=> {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json","Courses Online v1");
+            });
 
             app.UseEndpoints(endpoints =>
             {

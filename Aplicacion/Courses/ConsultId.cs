@@ -15,12 +15,12 @@ namespace Aplicacion.Courses
 {
     public class ConsultId
     {
-        public class UniqueCourse : IRequest<CourseDto>
+        public class Execute : IRequest<CourseDto>
         {
             public Guid Id { get; set; }
         }
 
-        public class Handler : IRequestHandler<UniqueCourse, CourseDto>
+        public class Handler : IRequestHandler<Execute, CourseDto>
         {
             private readonly CoursesOnlineContext _context;
             private readonly IMapper _mapper;
@@ -31,7 +31,7 @@ namespace Aplicacion.Courses
                 _context = context;
             }
 
-            public async Task<CourseDto> Handle(UniqueCourse request, CancellationToken cancellationToken)
+            public async Task<CourseDto> Handle(Execute request, CancellationToken cancellationToken)
             {
                 // var course = await _context.Course.FindAsync(request.Id);
                  var course = await _context.Course	

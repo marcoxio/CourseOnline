@@ -21,6 +21,9 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Persistencia;
+using Persistencia.DapperConnection;
+using Persistencia.DapperConnection.Instructor;
+using Persistencia.Interfaces;
 using Security;
 using WebAPI.Middleware;
 
@@ -44,7 +47,11 @@ namespace WebAPI
                 opt.UseSqlServer(Configuration.GetConnectionString("Courses"));
             });
             #endregion
-      
+
+            //Config Dapper
+            services.AddOptions();
+            services.Configure<ConnectConfiguration>(Configuration.GetSection("ConnectionStrings"));
+
 
             #region Configuration MediatR
             // services.AddMediatR(typeof(Consult.Handler).Assembly);
@@ -95,9 +102,14 @@ namespace WebAPI
             services.AddScoped<IUserSession, UserSession>();
 
             //Automapper
-            services.AddAutoMapper(typeof(MappingProfile));
+                services.AddAutoMapper(typeof(MappingProfile));
             // services.AddAutoMapper(typeof(Consult.Handler));
             // services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            // initialize dapper connection
+            services.AddTransient<IFactoryConnection,FactoryConnection>();
+            // interface instructors
+            services.AddScoped<IInstructor,InstructorRepository>();
 
            
             

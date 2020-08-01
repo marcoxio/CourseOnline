@@ -16,6 +16,9 @@
 # Install fluentValidation
 `dotnet add package FluentValidation.AspNetCore --version 8.5.2`
 
+# Install Dapper(Store Procedure)
+`dotnet add package Dapper --version 2.0.4`
+
 
 
 # Generate Migration
@@ -28,10 +31,7 @@
 file Program change
 `dotnet watch run`
 
+
+
 # How to Consult methods API
-
-## GetAllCourses
-`http://localhost:5000/api/cursos`
-
-## DetailCourse
-`http://localhost:5000/api/cursos{id}`
+* Consult Swagger

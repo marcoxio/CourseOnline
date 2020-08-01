@@ -28,7 +28,7 @@ namespace WebAPI.Controllers
 
         public async Task<ActionResult<CourseDto>> DetailCourse(Guid id)
         {
-            return await Mediator.Send(new ConsultId.UniqueCourse{Id = id});
+            return await Mediator.Send(new ConsultId.Execute{Id = id});
         }
 
         [HttpPost]

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "K7PWFY4ekByzP/Z8FxIBOcSS3J1UZV4oXVXLl/xss50JhIUXQmfFplcXO37pbMLGINBFcjh9KEYIyaSKEHEuBg==",
+  "dgSpecHash": "VWOMaxNAbk39nteLqFv9kr6H31dbqLdtWYjXRscQANTHh3U+Fw9p5RabpaaIA7z6yeVfrxnY+vvRzJAa+yQXmQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\manji\\OneDrive\\Documentos\\Courses\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\manji\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\manji\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",
+    "C:\\Users\\manji\\.nuget\\packages\\dapper\\2.0.4\\dapper.2.0.4.nupkg.sha512",
     "C:\\Users\\manji\\.nuget\\packages\\fluentvalidation\\8.6.2\\fluentvalidation.8.6.2.nupkg.sha512",
     "C:\\Users\\manji\\.nuget\\packages\\fluentvalidation.aspnetcore\\8.6.2\\fluentvalidation.aspnetcore.8.6.2.nupkg.sha512",
     "C:\\Users\\manji\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\8.6.2\\fluentvalidation.dependencyinjectionextensions.8.6.2.nupkg.sha512",

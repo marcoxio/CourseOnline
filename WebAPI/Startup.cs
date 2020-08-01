@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using System.Text;
 using Aplicacion.Courses;
 using Aplicacion.Interfaces;
@@ -42,9 +43,10 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             #region Context DB
-            services.AddDbContext<CoursesOnlineContext>(opt =>
+        services
+            .AddDbContext<CoursesOnlineContext>(opt =>
             {
-                opt.UseSqlServer(Configuration.GetConnectionString("Courses"));
+                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
             #endregion
 
@@ -54,8 +56,8 @@ namespace WebAPI
 
 
             #region Configuration MediatR
-            // services.AddMediatR(typeof(Consult.Handler).Assembly);
-            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddMediatR(typeof(Consult.Handler).Assembly);
+            // services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
                 
             #endregion
 
@@ -67,8 +69,7 @@ namespace WebAPI
                 })
                 .AddFluentValidation(cfg => 
                 {
-                    // cfg.RegisterValidatorsFromAssemblyContaining<New>();
-                    cfg.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
+                    cfg.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly());
                 });
             #endregion
 
@@ -76,6 +77,8 @@ namespace WebAPI
                    //Configure Core Identity
                     var builder = services.AddIdentityCore<User>();
                     var identityBuilder = new IdentityBuilder( builder.UserType,builder.Services);
+                    
+                    
                     identityBuilder.AddEntityFrameworkStores<CoursesOnlineContext>();
                     identityBuilder.AddSignInManager<SignInManager<User>>();
                     services.TryAddSingleton<ISystemClock, SystemClock>();
@@ -102,8 +105,8 @@ namespace WebAPI
             services.AddScoped<IUserSession, UserSession>();
 
             //Automapper
-                services.AddAutoMapper(typeof(MappingProfile));
-            // services.AddAutoMapper(typeof(Consult.Handler));
+                // services.AddAutoMapper(typeof(MappingProfile));
+            services.AddAutoMapper(typeof(Consult));
             // services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             // initialize dapper connection

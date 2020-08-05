@@ -26,10 +26,11 @@ namespace WebAPI
                 try
                 {
                     var userManager = services.GetRequiredService<UserManager<User>>();
+                    var loggerFactory = services.GetRequiredService<ILoggerFactory>();
                     var context = services.GetRequiredService<CoursesOnlineContext>();
                     context.Database.Migrate();
                     TestData.InsertData(context,userManager).Wait();
-
+                    CoursesOnlineSeed.SeedAsync(context, loggerFactory).Wait();
                 }
                 catch (Exception ex)
                 {

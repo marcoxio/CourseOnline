@@ -7,7 +7,7 @@ CREATE PROCEDURE usp_instructor_new(
 AS
 	BEGIN
 		
-		INSERT INTO Instructor(InstructorId, Name, LastName, Grade)
-		VALUES(@InstructorId,@Name,@LastName,@Grade)
+		INSERT INTO Instructor(InstructorId, Name, LastName, Grade, CreationDate)
+		VALUES(@InstructorId,@Name,@LastName,@Grade, GETUTCDATE())
 
 	END

@@ -10,6 +10,7 @@ AS
 		SET
 			Name = @Name,
 			LastName = @LastName,
-			Grade = @Grade
+			Grade = @Grade,
+			CreationDate = GETUTCDATE()
 		WHERE InstructorId = @InstructorId
 	END

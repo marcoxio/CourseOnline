@@ -1,3 +1,4 @@
+
 using System;
 
 namespace Dominio.Entities
@@ -9,6 +10,7 @@ namespace Dominio.Entities
         public int Score { get; set; }
         public string TextComment { get; set; }
         public Guid CourseId { get; set; }
+        public DateTime? CreationDate { get; set; }
         public Course Course { get; set; }
     }
 }

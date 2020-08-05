@@ -8,5 +8,7 @@ namespace Persistencia.DapperConnection.Instructor
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Grade { get; set; }
+
+        public DateTime? CreationDate { get; set; }
     }
 }

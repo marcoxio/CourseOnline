@@ -2,6 +2,6 @@ namespace Persistencia.DapperConnection
 {
     public class ConnectConfiguration
     {
-        public string Courses { get; set; }
+        public string DefaultConnection { get; set; }
     }
 }

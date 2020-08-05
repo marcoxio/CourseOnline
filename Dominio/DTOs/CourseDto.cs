@@ -12,6 +12,8 @@ namespace Dominio.DTOs
         public byte[] CoverPhoto { get; set; }
         public ICollection<InstructorDto> Instructors { get; set; }
         public PriceDto Price { get; set; }
+
+        public DateTime? CreationDate { get; set; }
         public ICollection<CommentDto> Comments { get; set; }
 
     }

@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 using Dominio.Entities;
 using Microsoft.Extensions.Logging;
 
-namespace Persistencia.Data.SeedData
+namespace Persistencia.Data
 {
     public class CoursesOnlineSeed
     {
-        public static async Task SeedAsync(CoursesOnlineContext context, ILoggerFactory loggerFactory)
-        {
-            try
-            {
-                  if (!context.Course.Any())
+         public static async Task SeedAsync(CoursesOnlineContext context, ILoggerFactory loggerFactory)
+         {
+             try
+             {
+                if (!context.Course.Any())
                 {
-                    var courseData = File.ReadAllText("../Persistencia/Data/SeedData/courses.json");
+                    var coursesData = File.ReadAllText("../Infrastructure/Data/SeedData/brands.json");
 
-                    var courses = JsonSerializer.Deserialize<List<Course>>(courseData);
+                    var courses = JsonSerializer.Deserialize<List<Course>>(coursesData);
 
                     foreach (var course in courses)
                     {
@@ -28,13 +28,13 @@ namespace Persistencia.Data.SeedData
 
                     await context.SaveChangesAsync();
                 }
-            }
-            catch (Exception ex)
-            {
-                
-                    var logger = loggerFactory.CreateLogger<CoursesOnlineSeed>();
+             }
+             catch (Exception ex)
+             {
+                 
+                var logger = loggerFactory.CreateLogger<CoursesOnlineSeed>();
                 logger.LogError(ex.Message);
-            }
-        }
+             }
+         }
     }
 }

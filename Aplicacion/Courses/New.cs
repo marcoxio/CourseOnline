@@ -15,7 +15,7 @@ namespace Aplicacion.Courses
     public class New
     {
         public class Execute : IRequest {
-            // public int CourseId { get; set; }
+            public Guid? CourseId { get; set; }
             public string Title { get; set; }
             public string Description { get; set; }
             public DateTime? DateOfPublication { get; set; }
@@ -32,8 +32,6 @@ namespace Aplicacion.Courses
                 RuleFor(x => x.Title).NotEmpty();
                 RuleFor(x => x.Description).NotEmpty();
                 RuleFor(x => x.DateOfPublication).NotEmpty();
-                RuleFor(x => x.Price).NotEmpty();
-                RuleFor(x => x.Promotion).NotEmpty();
             }
         }
 
@@ -49,14 +47,18 @@ namespace Aplicacion.Courses
             public async Task<Unit> Handle(Execute request, CancellationToken cancellationToken)
             {
                 Guid _courseId = Guid.NewGuid();
-
+                if (request.CourseId != null)
+                {
+                    _courseId = request.CourseId ?? Guid.NewGuid();
+                }
                
                 var course = new Course
                 {
                     CourseId = _courseId,
                     Title = request.Title,
                     Description = request.Description,
-                    DateOfPublication = request.DateOfPublication
+                    DateOfPublication = request.DateOfPublication,
+                    CreationDate = DateTime.UtcNow
                 };
 
                 await _context.Course.AddAsync(course);

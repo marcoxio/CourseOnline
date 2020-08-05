@@ -46,7 +46,8 @@ namespace Aplicacion.Comments
                     Alumn = request.Alumn,
                     Score = request.Score,
                     TextComment = request.Comment,
-                    CourseId = request.CourseId
+                    CourseId = request.CourseId,
+                    CreationDate = DateTime.UtcNow
                 };
 
                 _context.Comment.Add(comment);

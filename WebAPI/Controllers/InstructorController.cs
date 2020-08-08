@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Aplicacion.Instructors;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Persistencia.DapperConnection.Instructor;
 
 namespace WebAPI.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class InstructorController : MyControllerBase
     {
         [HttpGet]

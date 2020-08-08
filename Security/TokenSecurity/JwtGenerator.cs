@@ -11,7 +11,7 @@ namespace Security
 {
     public class JwtGenerator : IJwtGenerator
     {
-        public string CreateToken(User user)
+        public string CreateToken(User user, List<string> roles)
         {
             //in this section  add parameters for read JWT
             var claims = new List<Claim>
@@ -19,6 +19,15 @@ namespace Security
                 new Claim(JwtRegisteredClaimNames.NameId, user.UserName)
                 // new Claim(JwtRegisteredClaimNames.Email, user.Email)
             };
+
+            //Validation list Role
+            if (roles != null)
+            {
+                foreach (var rol in roles)
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, rol));
+                }
+            }
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("This is muy secret word"));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);

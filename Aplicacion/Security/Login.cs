@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -44,18 +45,21 @@ namespace Aplicacion.Security
         public async Task<UserData> Handle(Execute request, CancellationToken cancellationToken)
         {
             var user = await _userManager.FindByEmailAsync(request.Email);
+            
             if (user == null)
             {
                 throw new HandlerException(HttpStatusCode.Unauthorized);
             }
 
             var result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
+            var resultRoles = await _userManager.GetRolesAsync(user);
+            var listRoles = new List<string>(resultRoles);
             if (result.Succeeded)
             {
                 return new UserData
                 {
                     FullName = user.FullName,
-                    Token = _jwtGenerator.CreateToken(user),
+                    Token = _jwtGenerator.CreateToken(user,listRoles),
                     Username = user.UserName,
                     Email = user.Email,
                     Image = null

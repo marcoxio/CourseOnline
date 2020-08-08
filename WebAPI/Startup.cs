@@ -26,6 +26,8 @@ using Persistencia;
 using Persistencia.DapperConnection;
 using Persistencia.DapperConnection.Instructor;
 using Persistencia.Interfaces;
+using Persistencia.Pagination.Interfaces;
+using Persistencia.Pagination.Repository;
 using Security;
 using WebAPI.Middleware;
 
@@ -79,6 +81,10 @@ namespace WebAPI
                     var builder = services.AddIdentityCore<User>();
                     var identityBuilder = new IdentityBuilder( builder.UserType,builder.Services);
                     
+                    // Add new Role CoreIdentity
+                    identityBuilder.AddRoles<IdentityRole>();
+                    identityBuilder.AddClaimsPrincipalFactory<UserClaimsPrincipalFactory<User,IdentityRole>>();
+
                     
                     identityBuilder.AddEntityFrameworkStores<CoursesOnlineContext>();
                     identityBuilder.AddSignInManager<SignInManager<User>>();
@@ -114,6 +120,7 @@ namespace WebAPI
             services.AddTransient<IFactoryConnection,FactoryConnection>();
             // interface instructors
             services.AddScoped<IInstructor,InstructorRepository>();
+            services.AddScoped<IPagination,PaginationRepository>();
 
               //Swagger
             services.AddSwaggerGen(c => {

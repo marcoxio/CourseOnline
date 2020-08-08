@@ -7,6 +7,7 @@ using Dominio.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Persistencia.Pagination;
 
 namespace WebAPI.Controllers
 {
@@ -48,6 +49,12 @@ namespace WebAPI.Controllers
         public async Task<ActionResult<Unit>> DeleteCourse(Guid id)
         {
             return await Mediator.Send(new Delete.Execute{Id = id});
+        }
+
+        [HttpPost("report")]
+        public async Task<ActionResult<PaginationModel>> Report(PaginationCourse.Execute data)
+        {
+            return await Mediator.Send(data);
         }
     }
 }
